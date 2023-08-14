@@ -1,6 +1,6 @@
     // We'll pre-populate this array with a couple objects just so it's not undefined if your internet connection isn't working properly.
 
-    let arrayOfTodos = [
+   /*  let arrayOfTodos = [
         {
         "userId": 14,
         "id": 1,
@@ -12,9 +12,9 @@
         "id": 2,
         "title": "delectus aut autem",
         "completed": false
-    }]
-
-    console.log(arrayOfTodos[1].title)
+    }] */
+ 
+    /* console.log(arrayOfTodos[1].title) */
     
     const fetchTodos = () => {
         fetch('https://jsonplaceholder.typicode.com/todos')
@@ -28,10 +28,17 @@
     
     const populateTodos = () => {
         const orderedList = document.getElementById('todo-list')
+
+        
+        const arrLoop = (arr) => {
+            for (i = 0; i < arrayOfTodos.length; i++){
+        console.log(arr[i]);
         const newTodo = document.createElement('LI')
-        const textNode = document.createTextNode(arrayOfTodos[1].title)
+        const textNode = document.createTextNode(arrayOfTodos[i].title)
         orderedList.appendChild(newTodo)
         newTodo.appendChild(textNode)
+        }
     }
-    
-    // make a for loop
+    arrLoop(arrayOfTodos)
+};
+    const filtered = arrayOfTodos.filter((arrayOfTodos) => arrayOfTodos.userId)
